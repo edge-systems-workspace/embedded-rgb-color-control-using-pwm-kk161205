@@ -20,6 +20,18 @@ const uint8_t GREEN_PIN = 10;
 const uint8_t BLUE_PIN  = 11;
 
 void setup() {
+
+    Serial.begin(9600);
+    while (!Serial) {}
+
+    pinMode(RED_PIN, OUTPUT);
+    pinMode(GREEN_PIN, OUTPUT);
+    pinMode(BLUE_PIN, OUTPUT);
+
+    Serial.println("=================================");
+    Serial.println(" Embedded RGB LED Control System ");
+    Serial.println(" RGB Initialized (Common Cathode) ");
+    Serial.println("=================================");
 }
 
 void loop() {
