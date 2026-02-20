@@ -36,27 +36,30 @@ void setup() {
 
 void loop() {
 
-    Serial.println("DIGITAL MODE: RED ON");
+    Serial.println("---------------------------------");
 
-    // Turn ON red
+    // -------- DIGITAL MODE --------
+    Serial.println("Mode: DIGITAL");
+    Serial.println("Color: RED");
+
     digitalWrite(RED_PIN, HIGH);
     digitalWrite(GREEN_PIN, LOW);
     digitalWrite(BLUE_PIN, LOW);
 
     delay(1000);
 
-    Serial.println("DIGITAL MODE: RED OFF");
-
-    // Turn OFF red
     digitalWrite(RED_PIN, LOW);
-
     delay(1000);
 
-    Serial.println("PWM MODE: Custom Color");
+    // -------- ANALOG (PWM) MODE --------
+    Serial.println("Mode: PWM");
+    Serial.println("Mixing: R=255, G=100, B=50");
 
-    analogWrite(RED_PIN, 255);     // Full Red
-    analogWrite(GREEN_PIN, 100);   // Medium Green
-    analogWrite(BLUE_PIN, 50);     // Low Blue
+    analogWrite(RED_PIN, 255);
+    analogWrite(GREEN_PIN, 100);
+    analogWrite(BLUE_PIN, 50);
 
     delay(2000);
+
+    Serial.println("---------------------------------\n");
 }
