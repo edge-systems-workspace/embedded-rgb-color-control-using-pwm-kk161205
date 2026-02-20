@@ -51,3 +51,12 @@ void loop() {
     digitalWrite(RED_PIN, LOW);
 
     delay(1000);
+
+    Serial.println("PWM MODE: Custom Color");
+
+    analogWrite(RED_PIN, 255);     // Full Red
+    analogWrite(GREEN_PIN, 100);   // Medium Green
+    analogWrite(BLUE_PIN, 50);     // Low Blue
+
+    delay(2000);
+}
